@@ -820,15 +820,10 @@ export default function Portfolio() {
           </div>
           <div style={{ display:"flex",alignItems:"center",gap:6 }}>
             <span style={{ width:6,height:6,borderRadius:"50%",background:"#34d399",animation:"statusPulse 2s ease infinite",display:"inline-block" }} />
-            <span style={{ fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:"rgba(240,236,227,0.25)",letterSpacing:2,textTransform:"uppercase" }}>Open to work · 2025</span>
+            <span style={{ fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:"rgba(240,236,227,0.25)",letterSpacing:2,textTransform:"uppercase" }}>Open to work </span>
           </div>
           <div style={{ fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:"rgba(240,236,227,0.18)",letterSpacing:2,textTransform:"uppercase" }}>
             © ABI DAVID JAMES — CRAFTED WITH PRECISION & AI
-          </div>
-          <div style={{ display:"flex",gap:5 }}>
-            {["Python","React","AI","AWS"].map((t,i)=>(
-              <span key={t} style={{ fontFamily:"monospace",fontSize:9,color:["#00f5ff","#a78bfa","#f472b6","#fb923c"][i],border:`1px solid ${["#00f5ff","#a78bfa","#f472b6","#fb923c"][i]}33`,borderRadius:2,padding:"3px 9px",letterSpacing:1 }}>{t}</span>
-            ))}
           </div>
         </div>
       </section>
