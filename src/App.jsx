@@ -391,7 +391,7 @@ function JourneySection() {
       <Reveal delay={0.1}>
         <div style={{ maxWidth:780, marginBottom:90 }}>
           <p style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:"clamp(22px,3.2vw,42px)", lineHeight:1.2, letterSpacing:1, color:"rgba(240,236,227,0.88)", marginBottom:22 }}>
-            "I didn't learn to code,Driven by curiosity, innovation, and the desire to create impactful real-world technology.{" "}
+            "I didn't learn to code for namesake,Driven by curiosity, innovation, and the desire to create impactful real-world technology.{" "}
             <span style={{ color:"#00f5ff" }}>I learned to truly understand</span>{" "}
             how software works — every layer, every concept,{" "}
             every reason <span style={{ color:"#a78bfa" }}>why</span>."
