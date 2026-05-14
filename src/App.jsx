@@ -368,9 +368,9 @@ function MobileMenu({ open, onClose, goto }) {
 const JOURNEY = [
   { year:"2023", title:"Full Stack Developer",       why:"Building half an app meant depending on others. I wanted full ownership of everything I create.",         what:"Mastered React, Node.js, REST APIs — connected every layer from pixel to database.",                               color:"#00f5ff", icon:"⚡" },
   { year:"2023", title:"AI Integration & Prompting",          what:"Integrated ChatGPT API, Gemini, GitHub Copilot — making applications intelligent by design, not by accident.", color:"#a78bfa", icon:"🧱" },
-  { year:"2023", title:"Python & Foundation",               why:"Wanted to understand how computers think — not just use them.",                                          what:"Learned Python from scratch, built logic, solved real problems, fell in love with clean purposeful code.",  color:"#34d399", icon:"☁️" },
-  { year:"2024", title:"AWS & Devops",                 why:"Code that can't survive the real world is just a hobby. I needed production-grade systems.",              what:"AWS, Docker, CI/CD pipelines — turning code into reliable scalable infrastructure that never sleeps.", color:"#f472b6", icon:"🤖" },
-  { year:"2025 →", title:"Machine Learning",            why:"I don't want to just use AI. I want to build it, understand it, and shape what it becomes.",              what:"Currently diving deep into ML — models, training, inference. The final layer of becoming a complete software engineer.",  color:"#fb923c", icon:"🧠", next:true },
+  { year:"2025", title:"Python & Foundation",               why:"Wanted to understand how computers think — not just use them.",                                          what:"Learned Python from scratch, built logic, solved real problems, fell in love with clean purposeful code.",  color:"#34d399", icon:"☁️" },
+  { year:"2025", title:"AWS & Devops",                 why:"Code that can't survive the real world is just a hobby. I needed production-grade systems.",              what:"AWS, Docker, CI/CD pipelines — turning code into reliable scalable infrastructure that never sleeps.", color:"#f472b6", icon:"🤖" },
+  { year:"2026 →", title:"Machine Learning",            why:"I don't want to just use AI. I want to build it, understand it, and shape what it becomes.",              what:"Currently diving deep into ML — models, training, inference. The final layer of becoming a complete software engineer.",  color:"#fb923c", icon:"🧠", next:true },
 ];
 
 function JourneySection() {
@@ -643,7 +643,7 @@ export default function Portfolio() {
           <div style={{ flex:1,animation:"fadeUp 1s ease 0.3s both" }}>
             <div style={{ fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:"#00f5ff",letterSpacing:5,textTransform:"uppercase",marginBottom:26,display:"flex",alignItems:"center",gap:14 }}>
               <span style={{ display:"inline-block",width:32,height:1,background:"#00f5ff" }} />
-              Portfolio 2025
+              Portfolio 
             </div>
 
             <h1 style={{ fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(64px,10vw,148px)",lineHeight:0.88,letterSpacing:2,marginBottom:12 }}>
