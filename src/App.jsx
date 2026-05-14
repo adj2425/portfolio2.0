@@ -31,14 +31,14 @@ const PROJECTS = [
 ];
 
 const SKILL_GROUPS = [
-  { label: "Languages",      items: ["Python","JavaScript","C++"],                        color: "#00f5ff" },
+  { label: "Languages",      items: ["Python","JavaScript","C++","Linux"],                        color: "#00f5ff" },
   { label: "Frontend",       items: ["React.js","Node.js","HTML/CSS"],                    color: "#a78bfa" },
   { label: "Databases",      items: ["MySQL","MongoDB","Firebase","Supabase"],             color: "#34d399" },
-  { label: "Cloud & DevOps", items: ["AWS","Docker","Git","GitHub","CI/CD Pipelines"],    color: "#fb923c" },
-  { label: "AI & Prompting", items: ["ChatGPT API","Gemini","GitHub Copilot","Claude"],   color: "#f472b6" },
+  { label: "Cloud & DevOps", items: ["AWS","Docker","Git","GitHub","CI/CD Pipelines","Kubernetes"],    color: "#fb923c" },
+  { label: "AI & Prompting", items: ["ChatGPT API","Gemini","GitHub Copilot","Claude","Cursor"],   color: "#f472b6" },
 ];
 
-const MARQUEE = ["Python","·","React.js","·","Node.js","·","AWS","·","Docker","·","AI Engineering","·","FastAPI","·","MongoDB","·","CI/CD","·","Full Stack","·","Cloud","·","Prompt Engineering","·"];
+const MARQUEE = ["Python","·","React.js","·","Node.js","·","AWS","·","Docker","·","AI Engineering","·","FastAPI","·","MongoDB","·","CI/CD","·","Full Stack","·","Cloud","·","Prompt Engineering","·","Context Engineering","·"];
 
 /* ─────────────────────────────────────────
    HOOKS
@@ -367,7 +367,7 @@ function MobileMenu({ open, onClose, goto }) {
 ───────────────────────────────────────── */
 const JOURNEY = [
   { year:"2023", title:"Full Stack Developer",       why:"Building half an app meant depending on others. I wanted full ownership of everything I create.",         what:"Mastered React, Node.js, REST APIs — connected every layer from pixel to database.",                               color:"#00f5ff", icon:"⚡" },
-  { year:"2023", title:"AI Integration & Prompting",          what:"Integrated ChatGPT API, Gemini, GitHub Copilot — making applications intelligent by design, not by accident.", color:"#a78bfa", icon:"🧱" },
+  { year:"2023", title:"AI Integration & Prompting",  why:"AI wasn't the future anymore — it was the present. I had to speak its language.",what:"Integrated ChatGPT API, Gemini, GitHub Copilot — making applications intelligent by design, not by accident.", color:"#a78bfa", icon:"🧱" },
   { year:"2025", title:"Python & Foundation",               why:"Wanted to understand how computers think — not just use them.",                                          what:"Learned Python from scratch, built logic, solved real problems, fell in love with clean purposeful code.",  color:"#34d399", icon:"☁️" },
   { year:"2025", title:"AWS & Devops",                 why:"Code that can't survive the real world is just a hobby. I needed production-grade systems.",              what:"AWS, Docker, CI/CD pipelines — turning code into reliable scalable infrastructure that never sleeps.", color:"#f472b6", icon:"🤖" },
   { year:"2026 →", title:"Machine Learning",            why:"I don't want to just use AI. I want to build it, understand it, and shape what it becomes.",              what:"Currently diving deep into ML — models, training, inference. The final layer of becoming a complete software engineer.",  color:"#fb923c", icon:"🧠", next:true },
