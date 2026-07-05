@@ -5,28 +5,44 @@ import { useState, useEffect, useRef, useCallback } from "react";
 ───────────────────────────────────────── */
 const PROJECTS = [
   {
-    id: "01", title: "AI-Powered REST API Platform",
-    category: "Backend · AI · Cloud", year: "2024",
-    desc: "Scalable backend system integrating GPT-4 for intelligent data processing. Docker-based deployment with full CI/CD automation on AWS.",
-    tags: ["Python", "FastAPI", "AWS", "Docker", "ChatGPT API"],
-    accent: "#00f5ff", link: "",
-    gradient: "linear-gradient(135deg,#020d14 0%,#041824 60%,#020d14 100%)",
+    id: "01", title: "Abidavidjames Portfolio",
+    category: "Frontend · Personal Brand", year: "2025",
+    purpose: "A cinematic personal portfolio to showcase my skills, journey, and real-world projects.",
+    desc: "My own developer portfolio — built from scratch with React and Vite. Custom cursor, scroll reveals, horizontal project gallery, and a classic dark aesthetic that tells my story as a full-stack engineer.",
+    howItWorks: "Visitors explore my journey, skills, and projects in one flowing experience — with smooth animations guiding each section from hero to contact.",
+    tags: ["React", "Vite", "JavaScript", "CSS Animations"],
+    accent: "#c9a962", link: "https://abidavidjames.online",
+    gradient: "linear-gradient(135deg,#0d0b08 0%,#1a1510 60%,#0d0b08 100%)",
   },
   {
-    id: "02", title: "Full-Stack Web Application",
-    category: "Frontend · Backend · Database", year: "2024",
-    desc: "End-to-end web app with React frontend, Node.js backend, MongoDB database, and Firebase authentication.",
-    tags: ["React", "Node.js", "MongoDB", "Firebase"],
+    id: "02", title: "Billzzyy Website",
+    category: "Full Stack · SaaS · Billing", year: "2025",
+    purpose: "Smart billing and invoicing for small businesses, freelancers, and shops who need to get paid fast.",
+    desc: "A full-featured billing platform — create invoices, manage products, generate UPI QR codes, track pending payments, and subscribe via Razorpay. Supabase handles auth and sync while billing stays encrypted and local-first.",
+    howItWorks: "Sign up → add your products → create bills → share a UPI QR or mark cash → track pending payments and spending from one dashboard.",
+    tags: ["React", "Vite", "Supabase", "Razorpay", "Recharts", "jsPDF"],
+    accent: "#34d399", link: "https://www.billzzyy.com",
+    gradient: "linear-gradient(135deg,#020e0a 0%,#041a10 60%,#020e0a 100%)",
+  },
+  {
+    id: "03", title: "Billzzyy Mobile App",
+    category: "Android · Mobile · Billing", year: "2025",
+    purpose: "Take Billzzyy billing on the go — bill customers from your phone, anywhere.",
+    desc: "Native Android app built in Kotlin with Jetpack Compose. Syncs your product catalog to your account while keeping invoices and billing history private on each device — fast, modern, and built for real shop-floor use.",
+    howItWorks: "Open the app → pick products → generate an invoice → accept UPI or cash on the spot. Built for speed when you are away from the desk.",
+    tags: ["Kotlin", "Jetpack Compose", "Android", "Supabase"],
     accent: "#a78bfa", link: "",
     gradient: "linear-gradient(135deg,#0a0514 0%,#140a24 60%,#0a0514 100%)",
   },
   {
-    id: "03", title: "DevOps Automation Pipeline",
-    category: "Cloud · DevOps · Automation", year: "2024",
-    desc: "CI/CD pipeline architecture on AWS with GitHub Actions, Docker containers, and automated testing workflows.",
-    tags: ["AWS", "GitHub Actions", "Docker", "CI/CD"],
-    accent: "#34d399", link: "",
-    gradient: "linear-gradient(135deg,#020e0a 0%,#041a10 60%,#020e0a 100%)",
+    id: "04", title: "RoleCraft",
+    category: "AI · Career · Full Stack", year: "2026",
+    purpose: "One job. One click. One perfect application — an AI-powered career platform for serious job seekers.",
+    desc: "Upload resumes, get deterministic ATS scoring, analyze jobs from LinkedIn/Naukri/Indeed, generate tailored resumes and cover letters, run mock interviews, optimize LinkedIn, and track every application — powered by local Ollama LLM through Supabase Edge Functions.",
+    howItWorks: "Paste a job URL → RoleCraft Intelligence analyzes fit → get a prep plan, resume tweaks, cover letter, and interview coaching — all in-browser with glassmorphism UI and dark/light mode.",
+    tags: ["React 19", "TypeScript", "Tailwind CSS", "Supabase", "Ollama AI", "Framer Motion"],
+    accent: "#f472b6", link: "https://www.rolecraft.in",
+    gradient: "linear-gradient(135deg,#140810 0%,#1f0a18 60%,#140810 100%)",
   },
 ];
 
@@ -286,7 +302,7 @@ function ProjectsHScroll() {
   return (
     <div style={{ position:"relative" }}>
       {/* Scroll track */}
-      <div ref={trackRef} style={{ display:"flex", overflowX:"auto", scrollSnapType:"x mandatory", gap:3, scrollbarWidth:"none", msOverflowStyle:"none", cursor:"grab" }}>
+      <div ref={trackRef} style={{ display:"flex", overflowX:"auto", scrollSnapType:"x mandatory", gap:12, scrollbarWidth:"none", msOverflowStyle:"none", cursor:"grab" }}>
         <style>{`.proj-track::-webkit-scrollbar{display:none}`}</style>
         {PROJECTS.map((p, i) => <ProjectCard key={p.id} p={p} index={i} />)}
       </div>
@@ -306,26 +322,44 @@ function ProjectCard({ p, index }) {
   const handleClick = () => { if (p.link) window.open(p.link, "_blank", "noopener,noreferrer"); };
   return (
     <div onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)} onClick={handleClick}
-      style={{ minWidth:"clamp(320px,38vw,560px)", scrollSnapAlign:"center", background:"rgba(255,255,255,0.02)", border:`1px solid ${hov ? p.accent+"44" : "rgba(255,255,255,0.06)"}`, borderRadius:4, padding:"44px 40px", flexShrink:0, cursor:p.link?"none":"default", transition:"all 0.45s ease", transform:hov?"translateY(-8px)":"translateY(0)", boxShadow:hov?`0 24px 64px ${p.accent}18`:"none", position:"relative", overflow:"hidden" }}>
+      className="proj-card"
+      style={{ minWidth:"clamp(320px,38vw,560px)", scrollSnapAlign:"center", background:p.gradient||"rgba(255,255,255,0.02)", border:`1px solid ${hov ? p.accent+"55" : "rgba(201,169,98,0.12)"}`, borderRadius:2, padding:"44px 40px", flexShrink:0, cursor:p.link?"none":"default", transition:"all 0.55s cubic-bezier(.16,1,.3,1)", transform:hov?"translateY(-10px) scale(1.01)":"translateY(0) scale(1)", boxShadow:hov?`0 28px 72px ${p.accent}22, inset 0 1px 0 rgba(201,169,98,0.08)`:"inset 0 1px 0 rgba(255,255,255,0.03)", position:"relative", overflow:"hidden", animation:`classicFadeUp 0.9s cubic-bezier(.16,1,.3,1) ${index*0.12}s both` }}>
+      {/* Classic corner ornaments */}
+      {[{t:0,l:0},{t:0,r:0},{b:0,l:0},{b:0,r:0}].map((pos,i) => (
+        <div key={i} style={{ position:"absolute", ...pos, width:18, height:18, borderTop:pos.t===0?`1px solid ${hov?p.accent:"rgba(201,169,98,0.25)"}`:undefined, borderBottom:pos.b===0?`1px solid ${hov?p.accent:"rgba(201,169,98,0.25)"}`:undefined, borderLeft:pos.l===0?`1px solid ${hov?p.accent:"rgba(201,169,98,0.25)"}`:undefined, borderRight:pos.r===0?`1px solid ${hov?p.accent:"rgba(201,169,98,0.25)"}`:undefined, transition:"border-color 0.45s ease", pointerEvents:"none", zIndex:2 }} />
+      ))}
+      {/* Shimmer sweep */}
+      <div className="proj-shimmer" style={{ opacity:hov?1:0 }} />
       {/* Glow orb */}
       <div style={{ position:"absolute", top:-80, right:-80, width:220, height:220, borderRadius:"50%", background:`radial-gradient(circle,${p.accent}22,transparent 70%)`, opacity:hov?1:0, transition:"opacity 0.45s ease", pointerEvents:"none" }} />
       <div style={{ position:"relative", zIndex:1 }}>
         <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:28 }}>
-          <span style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:56, lineHeight:1, color:hov?p.accent:"rgba(255,255,255,0.1)", transition:"color 0.4s ease", letterSpacing:2 }}>{p.id}</span>
+          <span style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:56, lineHeight:1, color:hov?p.accent:"rgba(201,169,98,0.18)", transition:"color 0.4s ease", letterSpacing:2 }}>{p.id}</span>
           <div style={{ textAlign:"right" }}>
             <div style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, color:p.accent, letterSpacing:3, textTransform:"uppercase", marginBottom:4, opacity:hov?1:0.5, transition:"opacity 0.4s" }}>{p.category}</div>
             <div style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, color:"#444", letterSpacing:2 }}>{p.year}</div>
           </div>
         </div>
-        <h3 style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:"clamp(22px,2.8vw,36px)", letterSpacing:1, color:"#f0ece3", lineHeight:1.1, marginBottom:16 }}>{p.title}</h3>
-        <p style={{ fontSize:13, color:"rgba(240,236,227,0.45)", lineHeight:1.85, marginBottom:28, opacity:hov?1:0.6, transition:"opacity 0.4s ease" }}>{p.desc}</p>
+        <h3 style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:"clamp(22px,2.8vw,36px)", letterSpacing:1, color:"#f0ece3", lineHeight:1.1, marginBottom:12 }}>{p.title}</h3>
+        {p.purpose && (
+          <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:10, color:p.accent, letterSpacing:1.5, textTransform:"uppercase", marginBottom:14, opacity:hov?0.95:0.65, transition:"opacity 0.4s ease" }}>
+            Purpose → {p.purpose}
+          </p>
+        )}
+        <p style={{ fontSize:13, color:"rgba(240,236,227,0.5)", lineHeight:1.85, marginBottom:16, opacity:hov?1:0.65, transition:"opacity 0.4s ease" }}>{p.desc}</p>
+        {p.howItWorks && (
+          <p style={{ fontSize:12, color:"rgba(240,236,227,0.38)", lineHeight:1.8, marginBottom:24, borderLeft:`2px solid ${p.accent}44`, paddingLeft:14, opacity:hov?1:0.5, transform:hov?"translateX(0)":"translateX(-4px)", transition:"all 0.45s ease" }}>
+            <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, color:p.accent, letterSpacing:2, display:"block", marginBottom:6 }}>HOW IT WORKS</span>
+            {p.howItWorks}
+          </p>
+        )}
         <div style={{ display:"flex", flexWrap:"wrap", gap:7, marginBottom:32 }}>
           {p.tags.map(t => (
-            <span key={t} style={{ fontFamily:"monospace", fontSize:10, color:p.accent, border:`1px solid ${p.accent}44`, borderRadius:2, padding:"3px 10px", letterSpacing:1 }}>{t}</span>
+            <span key={t} style={{ fontFamily:"monospace", fontSize:10, color:p.accent, border:`1px solid ${p.accent}44`, borderRadius:2, padding:"3px 10px", letterSpacing:1, transition:"all 0.3s ease", background:hov?`${p.accent}0d`:"transparent" }}>{t}</span>
           ))}
         </div>
-        <div style={{ display:"flex", alignItems:"center", gap:10, fontFamily:"'JetBrains Mono',monospace", fontSize:11, color:p.accent, opacity:hov?1:0, transform:hov?"translateX(0)":"translateX(-8px)", transition:"all 0.4s ease 0.05s" }}>
-          {p.link ? <><span>Open Project</span><span>↗</span></> : <><span>Coming Soon</span><span>→</span></>}
+        <div style={{ display:"flex", alignItems:"center", gap:10, fontFamily:"'JetBrains Mono',monospace", fontSize:11, color:p.accent, opacity:hov?1:0.35, transform:hov?"translateX(0)":"translateX(-8px)", transition:"all 0.4s ease 0.05s" }}>
+          {p.link ? <><span>View Live</span><span>↗</span></> : <><span>App Link Coming Soon</span><span>→</span></>}
         </div>
       </div>
     </div>
@@ -370,6 +404,8 @@ const JOURNEY = [
   { year:"2023", title:"AI Integration & Prompting",  why:"AI wasn't the future anymore — it was the present. I had to speak its language.",what:"Integrated ChatGPT API, Gemini, GitHub Copilot — making applications intelligent by design, not by accident.", color:"#a78bfa", icon:"🧱" },
   { year:"2025", title:"Python & Foundation",               why:"Wanted to understand how computers think — not just use them.",                                          what:"Learned Python from scratch, built logic, solved real problems, fell in love with clean purposeful code.",  color:"#34d399", icon:"☁️" },
   { year:"2025", title:"AWS & Devops",                 why:"Code that can't survive the real world is just a hobby. I needed production-grade systems.",              what:"AWS, Docker, CI/CD pipelines — turning code into reliable scalable infrastructure that never sleeps.", color:"#f472b6", icon:"🤖" },
+  { year:"2025 →", title:"Billzzyy", role:"Founder & Full-Stack Developer", why:"Freelancers and small businesses need fast, reliable billing without enterprise complexity.", what:"Currently building and shipping Billzzyy — invoicing, UPI payments, Razorpay subscriptions, Android app, and Supabase backend. Live at billzzyy.com.", color:"#34d399", icon:"📊", working:true, link:"https://www.billzzyy.com" },
+  { year:"2026 →", title:"RoleCraft", role:"Founder & Full-Stack Developer", why:"Job seekers deserve one platform to analyze roles, prepare, and apply with confidence.", what:"Currently developing RoleCraft — AI resume analysis, ATS scoring, mock interviews, job prep, and application tracking. Live at rolecraft.in.", color:"#f472b6", icon:"🎯", working:true, link:"https://www.rolecraft.in" },
   { year:"2026 →", title:"Machine Learning",            why:"I don't want to just use AI. I want to build it, understand it, and shape what it becomes.",              what:"Currently diving deep into ML — models, training, inference. The final layer of becoming a complete software engineer.",  color:"#fb923c", icon:"🧠", next:true },
 ];
 
@@ -384,7 +420,7 @@ function JourneySection() {
         <div style={{ display:"flex", alignItems:"center", gap:20, marginBottom:24 }}>
           <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:11, color:"rgba(240,236,227,0.22)", letterSpacing:4 }}>02</span>
           <span style={{ flex:1, height:1, background:"rgba(255,255,255,0.05)" }} />
-          <h2 style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:"clamp(40px,6vw,80px)", letterSpacing:3, color:"#f0ece3" }}>MY JOURNEY</h2>
+          <h2 style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:"clamp(40px,6vw,80px)", letterSpacing:3, color:"#f0ece3" }}>EXPERIENCE & JOURNEY</h2>
         </div>
       </Reveal>
 
@@ -405,7 +441,7 @@ function JourneySection() {
 
       <div style={{ display:"flex", flexDirection:"column" }}>
         {JOURNEY.map((step, i) => (
-          <Reveal key={step.year} delay={i * 0.1}>
+          <Reveal key={`${step.year}-${step.title}`} delay={i * 0.1}>
             <div onMouseEnter={() => setActive(i)} onMouseLeave={() => setActive(null)}
               style={{ display:"grid", gridTemplateColumns:"140px 1px 1fr", alignItems:"stretch", cursor:"default" }}>
 
@@ -424,13 +460,26 @@ function JourneySection() {
 
               {/* Content */}
               <div style={{ padding:"32px 0 32px 40px", background:active===i ? `linear-gradient(90deg,${step.color}09,transparent)` : "transparent", transition:"background 0.5s ease" }}>
+                {step.working && (
+                  <div style={{ display:"inline-flex", alignItems:"center", gap:8, fontFamily:"'JetBrains Mono',monospace", fontSize:9, color:step.color, letterSpacing:3, textTransform:"uppercase", background:`${step.color}14`, border:`1px solid ${step.color}33`, borderRadius:2, padding:"4px 12px", marginBottom:14 }}>
+                    <span style={{ width:5, height:5, borderRadius:"50%", background:step.color, animation:"statusPulse 1.5s ease infinite", display:"inline-block" }} />
+                    Currently Working
+                  </div>
+                )}
                 {step.next && (
                   <div style={{ display:"inline-flex", alignItems:"center", gap:8, fontFamily:"'JetBrains Mono',monospace", fontSize:9, color:step.color, letterSpacing:3, textTransform:"uppercase", background:`${step.color}14`, border:`1px solid ${step.color}33`, borderRadius:2, padding:"4px 12px", marginBottom:14 }}>
                     <span style={{ width:5, height:5, borderRadius:"50%", background:step.color, animation:"statusPulse 1.5s ease infinite", display:"inline-block" }} />
                     Currently Learning
                   </div>
                 )}
-                <h3 style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:"clamp(22px,2.5vw,36px)", letterSpacing:1, color:active===i ? "#f0ece3" : "rgba(240,236,227,0.6)", transition:"color 0.4s ease", marginBottom:12, lineHeight:1 }}>{step.title}</h3>
+                <h3 style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:"clamp(22px,2.5vw,36px)", letterSpacing:1, color:active===i ? "#f0ece3" : "rgba(240,236,227,0.6)", transition:"color 0.4s ease", marginBottom:step.role ? 6 : 12, lineHeight:1 }}>
+                  {step.link ? (
+                    <a href={step.link} target="_blank" rel="noopener noreferrer" style={{ color:"inherit", textDecoration:"none", borderBottom:`1px solid ${active===i ? step.color : "transparent"}`, transition:"border-color 0.4s ease" }}>{step.title}</a>
+                  ) : step.title}
+                </h3>
+                {step.role && (
+                  <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:10, color:"rgba(240,236,227,0.35)", letterSpacing:2, textTransform:"uppercase", marginBottom:12 }}>{step.role}</p>
+                )}
                 <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:11, color:step.color, letterSpacing:1, marginBottom:10, opacity:active===i ? 1 : 0.45, transition:"opacity 0.4s ease" }}>
                   WHY → {step.why}
                 </p>
@@ -570,9 +619,15 @@ export default function Portfolio() {
         @keyframes marqueeX  { from{transform:translateX(0)} to{transform:translateX(-50%)} }
         @keyframes blink     { 0%,100%{opacity:1} 50%{opacity:0} }
         @keyframes fadeUp    { from{opacity:0;transform:translateY(60px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes classicFadeUp { from{opacity:0;transform:translateY(40px) scale(0.98)} to{opacity:1;transform:translateY(0) scale(1)} }
         @keyframes dotPulse  { 0%,100%{box-shadow:0 0 0 0 rgba(0,245,255,0.5)} 50%{box-shadow:0 0 0 7px rgba(0,245,255,0)} }
         @keyframes statusPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
         @keyframes slideIn   { from{opacity:0;transform:translateY(-12px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes classicShimmer { 0%{transform:translateX(-120%) skewX(-12deg)} 100%{transform:translateX(220%) skewX(-12deg)} }
+        @keyframes gentleFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        .proj-shimmer { position:absolute; inset:0; background:linear-gradient(105deg,transparent 40%,rgba(201,169,98,0.06) 50%,transparent 60%); animation:classicShimmer 2.8s ease infinite; pointer-events:none; z-index:1; transition:opacity 0.4s ease; }
+        .proj-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(201,169,98,0.35),transparent); opacity:0; transition:opacity 0.45s ease; }
+        .proj-card:hover::before { opacity:1; }
         @media(max-width:900px){
           .hflex{flex-direction:column!important;gap:36px!important;padding-top:80px!important}
           .hphoto{width:200px!important;height:250px!important;align-self:center}
@@ -716,6 +771,9 @@ export default function Portfolio() {
               I'm an <span style={{ color:"#f0ece3",fontWeight:700 }}>AI-Powered Python Full Stack Developer</span> with hands-on experience in building scalable web applications. I specialize in designing REST APIs, integrating frontend and backend systems, and managing diverse databases.
             </p>
             <p style={{ fontSize:16,lineHeight:2,color:"rgba(240,236,227,0.52)",marginBottom:26 }}>
+              Currently working as <span style={{ color:"#34d399",fontWeight:600 }}>Founder & Full-Stack Developer</span> on <span style={{ color:"#f0ece3",fontWeight:600 }}>Billzzyy</span> and <span style={{ color:"#f0ece3",fontWeight:600 }}>RoleCraft</span> — two live products I design, build, and ship end to end.
+            </p>
+            <p style={{ fontSize:16,lineHeight:2,color:"rgba(240,236,227,0.52)",marginBottom:26 }}>
               Experienced in <span style={{ color:"#a78bfa",fontWeight:600 }}>AWS cloud services</span> and DevOps practices, including Docker and CI/CD pipelines. Proficient in leveraging AI tools and prompt engineering to automate workflows.
             </p>
             <p style={{ fontSize:16,lineHeight:2,color:"rgba(240,236,227,0.52)",marginBottom:40 }}>
@@ -762,7 +820,9 @@ export default function Portfolio() {
       </section>
 
       {/* ── PROJECTS ── */}
-      <section id="projects" style={{ padding:"130px 6vw",borderTop:"1px solid rgba(255,255,255,0.04)",position:"relative" }}>
+      <section id="projects" style={{ padding:"130px 6vw",borderTop:"1px solid rgba(201,169,98,0.08)",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"15%",left:"-6%",width:320,height:320,borderRadius:"50%",border:"1px solid rgba(201,169,98,0.06)",animation:"gentleFloat 8s ease-in-out infinite",pointerEvents:"none" }} />
+        <div style={{ position:"absolute",bottom:"8%",right:"-4%",width:200,height:200,borderRadius:"50%",border:"1px dashed rgba(0,245,255,0.08)",animation:"gentleFloat 11s ease-in-out infinite reverse",pointerEvents:"none" }} />
         <Reveal>
           <div style={{ display:"flex",alignItems:"center",gap:20,marginBottom:70 }}>
             <span style={{ fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:"rgba(240,236,227,0.22)",letterSpacing:4 }}>05</span>
