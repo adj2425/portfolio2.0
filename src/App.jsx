@@ -770,7 +770,7 @@ export default function Portfolio() {
               I'm an <span style={{ color:"#f0ece3",fontWeight:700 }}>AI-Powered Python Full Stack Developer</span> with hands-on experience in building scalable web applications. I specialize in designing REST APIs, integrating frontend and backend systems, and managing diverse databases.
             </p>
             <p style={{ fontSize:16,lineHeight:2,color:"rgba(240,236,227,0.52)",marginBottom:26 }}>
-              Currently working as <span style={{ color:"#34d399",fontWeight:600 }}>Founder & Full-Stack Developer</span> on <span style={{ color:"#f0ece3",fontWeight:600 }}>Billzzyy</span> and <span style={{ color:"#f0ece3",fontWeight:600 }}>RoleCraft</span> — two live products I design, build, and ship end to end.
+              Currently working as <span style={{ color:"#34d399",fontWeight:600 }}>Founder </span> on <span style={{ color:"#f0ece3",fontWeight:600 }}>Billzzyy</span> and <span style={{ color:"#f0ece3",fontWeight:600 }}>RoleCraft</span> — two live products I design, build, and ship end to end.
             </p>
             <p style={{ fontSize:16,lineHeight:2,color:"rgba(240,236,227,0.52)",marginBottom:26 }}>
               Experienced in <span style={{ color:"#a78bfa",fontWeight:600 }}>AWS cloud services</span> and DevOps practices, including Docker and CI/CD pipelines. Proficient in leveraging AI tools and prompt engineering to automate workflows.
