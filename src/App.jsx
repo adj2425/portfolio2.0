@@ -31,7 +31,7 @@ const PROJECTS = [
     desc: "Native Android app built in Kotlin with Jetpack Compose. Syncs your product catalog to your account while keeping invoices and billing history private on each device — fast, modern, and built for real shop-floor use.",
     howItWorks: "Open the app → pick products → generate an invoice → accept UPI or cash on the spot. Built for speed when you are away from the desk.",
     tags: ["Kotlin", "Jetpack Compose", "Android", "Supabase"],
-    accent: "#a78bfa", link: "",
+    accent: "#a78bfa", link: "https://play.google.com/store/apps/details?id=com.billzzyy.app&pcampaignid=web_share",
     gradient: "linear-gradient(135deg,#0a0514 0%,#140a24 60%,#0a0514 100%)",
   },
   {
@@ -47,7 +47,7 @@ const PROJECTS = [
 ];
 
 const SKILL_GROUPS = [
-  { label: "Languages",      items: ["Python","JavaScript","C++","Linux"],                        color: "#00f5ff" },
+  { label: "Languages",      items: ["Python","JavaScript","Kotlin","C++","Linux"],                        color: "#00f5ff" },
   { label: "Frontend",       items: ["React.js","Node.js","HTML/CSS"],                    color: "#a78bfa" },
   { label: "Databases",      items: ["MySQL","MongoDB","Firebase","Supabase"],             color: "#34d399" },
   { label: "Cloud & DevOps", items: ["AWS","Docker","Git","GitHub","CI/CD Pipelines","Kubernetes"],    color: "#fb923c" },
