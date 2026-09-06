@@ -529,7 +529,7 @@ export default function Portfolio() {
   const winW = useWindowSize();
   const isMobile = winW < 900;
 
-  const titles = ["AI-Powered Developer.","Python Full Stack Dev.","Cloud & DevOps Engineer.","AI Integration Specialist."];
+  const titles = ["AI-Powered Developer.","Python Full Stack Dev.","Cloud & DevOps Engineer.","AI Integration Specialist.","Machine Learing.","Deep Learning.","Fullstack Engineer.","Agentic AI.","Genrative AI.","Large Language Model."];
   const tR = useRef(0), cR = useRef(0), dR = useRef(false);
 
   /* Typing */
