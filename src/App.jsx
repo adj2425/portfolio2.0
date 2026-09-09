@@ -50,7 +50,7 @@ const SKILL_GROUPS = [
   { label: "Languages",      items: ["Python","JavaScript","Kotlin","C++","Linux"],                        color: "#00f5ff" },
   { label: "Frontend",       items: ["React.js","Node.js","HTML/CSS","API Intergration"],                    color: "#a78bfa" },
   { label: "Databases",      items: ["MySQL","MongoDB","Firebase","Supabase"],             color: "#34d399" },
-  { label: "Cloud & DevOps", items: ["AWS","Docker","Git","GitHub","CI/CD Pipelines","Kubernetes"],    color: "#fb923c" },
+  { label: "Cloud & DevOps", items: ["AWS","Docker","Git","GitHub","CI/CD Pipelines","Kubernetes","System Design"],    color: "#fb923c" },
   { label: "Data Science",   items: ["Pandas","NumPy","Matplotlib"], color: "#34a1d3" },
   { label: "AI & Prompting", items: ["AI","ML","DL","Agentic AI","Generative AI","LLM","Flash API","ChatGPT API","Gemini","GitHub Copilot","Claude","Cursor"],   color: "#f472b6" },
   
