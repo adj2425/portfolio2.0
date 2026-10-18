@@ -36,7 +36,7 @@ const PROJECTS = [
   },
   {
     id: "04", title: "RoleCraft",
-    category: "AI · Career · Full Stack", year: "2026",
+    category: "AI · Career · Full Stack", year: "2025",
     purpose: "One job. One click. One perfect application — an AI-powered career platform for serious job seekers.",
     desc: "Upload resumes, get deterministic ATS scoring, analyze jobs from LinkedIn/Naukri/Indeed, generate tailored resumes and cover letters, run mock interviews, optimize LinkedIn, and track every application — powered by local Ollama LLM through Supabase Edge Functions.",
     howItWorks: "Paste a job URL → RoleCraft Intelligence analyzes fit → get a prep plan, resume tweaks, cover letter, and interview coaching — all in-browser with glassmorphism UI and dark/light mode.",
